@@ -5,6 +5,8 @@
   <!--<div cat-directive cat-directive-data="cat" cat-directive-choose-callback="chooseCat(cat)"></div>-->
 <!--</div>-->
 
+<button ng-click="showAdmin()">Show admin</button>
+
 <ul>
   <li ng-repeat="cat in catList" ng-click="chooseCat(cat)">{{cat.name}}</li>
 </ul>
@@ -14,4 +16,15 @@
   <div ng-if="chosenCat">
     <div cat-directive="cat" cat-directive-data="chosenCat"></div>
   </div>
+</div>
+
+<div ng-show="adminShown">
+  <h3>Admin area</h3>
+  <form name="adminCatForm">
+    <input type="text" ng-model="adminCat.url" id="url"  name="url" />
+    <input type="text" ng-model="adminCat.name" id="name"  name="name" />
+    <input type="text" ng-model="adminCat.clicks" id="clicks"  name="clicks" />
+    <button ng-click="saveCatChanges()">Save</button>
+    <button ng-click="hideAdmin()">Cancel</button>
+  </form>
 </div>

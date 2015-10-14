@@ -10,6 +10,9 @@
 angular.module('styleSageCatsApp')
   .controller('MainCtrl', ['$scope', 'googleCatsService', function ($scope, googleCatsService) {
     $scope.chosenCat = undefined;
+    $scope.adminCat = undefined;
+
+    $scope.adminShown = false;
 
     $scope.catList = [
       {
@@ -51,6 +54,22 @@ angular.module('styleSageCatsApp')
 
     $scope.chooseCat = function(cat) {
       $scope.chosenCat = cat;
+    };
+
+    $scope.showAdmin = function() {
+      $scope.adminCat = angular.copy($scope.chosenCat);
+      $scope.adminShown = true;
+    };
+
+    $scope.hideAdmin = function() {
+      $scope.adminShown = false;
+    };
+
+    $scope.saveCatChanges = function() {
+      $scope.chosenCat.name = $scope.adminCat.name;
+      $scope.chosenCat.url = $scope.adminCat.url;
+      $scope.chosenCat.clicks = $scope.adminCat.clicks;
+      $scope.hideAdmin();
     }
 
   }]);
