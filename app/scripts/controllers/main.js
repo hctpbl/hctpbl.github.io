@@ -9,6 +9,8 @@
  */
 angular.module('styleSageCatsApp')
   .controller('MainCtrl', ['$scope', 'googleCatsService', function ($scope, googleCatsService) {
+    $scope.chosenCat = undefined;
+
     $scope.catList = [
       {
         url: "http://s.hswstatic.com/gif/whiskers-sam.jpg",
@@ -19,17 +21,36 @@ angular.module('styleSageCatsApp')
         url: "http://s3-static-ak.buzzfed.com/static/campaign_images/webdr05/2013/9/11/6/the-location-of-londons-first-cat-cafe-has-finall-1-8314-1378896387-0_big.jpg",
         name: "Cat 2",
         clicks: 0
+      },
+      {
+        url: "http://www.cgdev.org/sites/default/files/cat8.jpg",
+        name: "Cat 3",
+        clicks: 0
+      },
+      {
+        url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Cat_March_2010-1.jpg",
+        name: "Cat 4",
+        clicks: 0
+      },
+      {
+        url: "https://www.friskies.com/Content/images/headers/cat_wet.png",
+        name: "Cat 5",
+        clicks: 0
       }
     ];
 
 
-    /*googleCatsService.getCatsFromGoogle()
+    googleCatsService.getCatsFromGoogle()
       .then(function(result) {
-        $scope.cat = result.data.responseData.results[0];
-      });*/
+        $scope.cat = result.data.responseData;
+      });
 
     $scope.clickCat = function(cat) {
       cat.clicks++;
     };
+
+    $scope.chooseCat = function(cat) {
+      $scope.chosenCat = cat;
+    }
 
   }]);
