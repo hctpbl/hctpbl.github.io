@@ -11,12 +11,12 @@ angular.module('styleSageCatsApp')
   .controller('MainCtrl', ['$scope', 'googleCatsService', function ($scope, googleCatsService) {
     $scope.catList = [
       {
-        url: "http://weknowyourdreams.com/images/cat/cat-01.jpg",
+        url: "http://s.hswstatic.com/gif/whiskers-sam.jpg",
         name: "Cat 1",
         clicks: 0
       },
       {
-        url: "http://weknowyourdreams.com/images/cat/cat-06.jpg",
+        url: "http://s3-static-ak.buzzfed.com/static/campaign_images/webdr05/2013/9/11/6/the-location-of-londons-first-cat-cafe-has-finall-1-8314-1378896387-0_big.jpg",
         name: "Cat 2",
         clicks: 0
       }
