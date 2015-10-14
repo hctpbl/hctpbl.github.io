@@ -1,9 +1,13 @@
-<div ng-repeat="cat in catList">
+<!--<div ng-repeat="cat in catList">-->
   <!--<h4 ng-click="chooseCat(cat)">{{cat.name}}</h4>-->
   <!--<img ng-src="{{cat.url}}" alt="{{cat.name}}" width="500" ng-click="clickCat(cat)">-->
   <!--<p>{{cat.name}} has been clicked {{cat.clicks}} times</p>-->
-  <div cat-directive cat-directive-data="cat" cat-directive-choose-callback="chooseCat(cat)"></div>
-</div>
+  <!--<div cat-directive cat-directive-data="cat" cat-directive-choose-callback="chooseCat(cat)"></div>-->
+<!--</div>-->
+
+<ul>
+  <li ng-repeat="cat in catList" ng-click="chooseCat(cat)">{{cat.name}}</li>
+</ul>
 
 <div>
   <h3>Cat display area</h3>
