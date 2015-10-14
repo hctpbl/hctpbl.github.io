@@ -1,3 +1,5 @@
-<img src="http://weknowyourdreams.com/images/cat/cat-01.jpg" alt="cat" ng-click="clickCat()">
-
-<p>The cat has been click {{catClicks}} times</p>
+<div ng-repeat="cat in catList" ng-click="clickCat(cat)">
+  <h4>{{cat.name}}</h4>
+  <img ng-src="{{cat.url}}" alt="{{cat.name}}">
+  <p>{{cat.name}} has been clicked {{cat.clicks}} times</p>
+</div>
